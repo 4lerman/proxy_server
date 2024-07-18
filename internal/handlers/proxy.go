@@ -11,6 +11,17 @@ import (
 	"github.com/google/uuid"
 )
 
+// HandleProxy godoc
+// @Summary Proxy request to a third-party service
+// @Description Proxies a request to a third-party service and returns the response
+// @Tags proxy
+// @Accept json
+// @Produce json
+// @Param proxyRequest body models.ProxyRequest true "Proxy Request"
+// @Success 200 {object} models.ProxyResponse
+// @Failure 400 {string} string "Invalid request body"
+// @Failure 500 {string} string "Internal server error"
+// @Router /proxy [post]
 func HandlerProxy(w http.ResponseWriter, r *http.Request) {
 	var proxyReq models.ProxyRequest
 

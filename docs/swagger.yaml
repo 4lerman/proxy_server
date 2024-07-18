@@ -1,0 +1,76 @@
+basePath: /api
+definitions:
+  models.ProxyRequest:
+    properties:
+      headers:
+        additionalProperties:
+          type: string
+        example:
+          Authorization: Basic bG9naW46cGFzc3dvcmQ=
+        type: object
+      method:
+        example: GET
+        type: string
+      url:
+        example: http://google.com
+        type: string
+    type: object
+  models.ProxyResponse:
+    properties:
+      headers:
+        additionalProperties:
+          items:
+            type: string
+          type: array
+        type: object
+      id:
+        type: string
+      method:
+        type: integer
+      status:
+        type: integer
+    type: object
+host: localhost:8080
+info:
+  contact:
+    email: soberkoder@swagger.io
+    name: API Support
+  description: This is a proxy server api
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
+  termsOfService: http://swagger.io/terms/
+  title: Proxy Server
+  version: "1.0"
+paths:
+  /proxy:
+    post:
+      consumes:
+      - application/json
+      description: Proxies a request to a third-party service and returns the response
+      parameters:
+      - description: Proxy Request
+        in: body
+        name: proxyRequest
+        required: true
+        schema:
+          $ref: '#/definitions/models.ProxyRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.ProxyResponse'
+        "400":
+          description: Invalid request body
+          schema:
+            type: string
+        "500":
+          description: Internal server error
+          schema:
+            type: string
+      summary: Proxy request to a third-party service
+      tags:
+      - proxy
+swagger: "2.0"

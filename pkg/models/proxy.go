@@ -1,9 +1,9 @@
 package models
 
 type ProxyRequest struct {
-	Method  string            `json:"method"`
-	URL     string            `json:"url"`
-	Headers map[string]string `json:"headers"`
+    Method  string            `json:"method" example:"GET"`
+    URL     string            `json:"url" example:"http://google.com"`
+	Headers map[string]string `json:"headers" example:"Authorization:Basic bG9naW46cGFzc3dvcmQ="`
 }
 
 type ProxyResponse struct {
