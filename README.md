@@ -34,7 +34,7 @@ This project is an HTTP proxy server that forwards requests to third-party servi
 
 ## Usage
 
-Send a POST request to `http://localhost:8080/proxy` with the following JSON body:
+Send a POST request to `http://localhost:8080/api/proxy` with the following JSON body:
 
 ```json
 {
