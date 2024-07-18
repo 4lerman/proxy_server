@@ -16,9 +16,6 @@ bin/
 # Dependency directories
 vendor/
 
-# Docker-specific
-Dockerfile
-docker-compose.yml
 
 # OS-specific
 # Windows
