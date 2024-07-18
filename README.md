@@ -34,11 +34,4 @@ This project is an HTTP proxy server that forwards requests to third-party servi
 
 ## Usage
 
-Send a POST request to `http://localhost:8080/api/proxy` with the following JSON body:
-
-```json
-{
-  "method": "GET",
-  "url": "http://google.com",
-  "headers": { "Authentication": "Basic bG9naW46cGFzc3dvcmQ=", ... }
-}
+Open `http://localhost:8080/swagger/` to get to Swagger docs.
